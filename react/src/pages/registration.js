@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -32,13 +32,12 @@ function Register() {
                 navigate('/login');
             }
         } catch (error) {
-            toast.error(error.response.data.message || "An error occurred during registration");
-        }
-        finally {
-            setName('')
-            setEmail('')
-            setPassword('')
-            setConfirmPassword('')
+            toast.error(error.response?.data?.message || "An error occurred during registration");
+        } finally {
+            setName('');
+            setEmail('');
+            setPassword('');
+            setConfirmPassword('');
         }
     };
 
@@ -88,6 +87,9 @@ function Register() {
                 </label>
                 <button type="submit" style={styles.button}>Register</button>
             </form>
+            <p style={styles.loginText}>
+                Already have an account? <Link to="/login" style={styles.loginLink}>Login here</Link>
+            </p>
             <ToastContainer />
         </div>
     );
@@ -126,6 +128,15 @@ const styles = {
         cursor: 'pointer',
         fontWeight: 'bold',
         marginTop: '20px',
+    },
+    loginText: {
+        marginTop: '20px',
+        textAlign: 'center',
+    },
+    loginLink: {
+        color: '#007BFF',
+        textDecoration: 'none',
+        fontWeight: 'bold',
     },
 };
 

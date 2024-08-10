@@ -1,42 +1,29 @@
-/* styles.css */
-
 .credit-card-page {
     padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.credit-card-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .search-filter {
     margin-bottom: 20px;
 }
 
-.card-form {
-    margin-bottom: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.card-form input,
-.card-form select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.card-form button {
-    padding: 8px 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.card-form button:hover {
-    background-color: #45a049;
+.search-filter input {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    display: block;
+    font-size: 16px;
 }
 
 .card-table {
-    overflow-x: auto;
+    margin-bottom: 20px;
 }
 
 .card-table table {
@@ -46,88 +33,111 @@
 
 .card-table th,
 .card-table td {
+    padding: 10px;
     border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
-.card-table th {
-    background-color: #f2f2f2;
+.pagination {
+    text-align: center;
 }
 
-.card-table td {
-    white-space: nowrap;
-}
-
-.card-table button {
-    margin-right: 5px;
-    padding: 5px 10px;
+.pagination button {
+    margin: 0 5px;
+    padding: 10px 15px;
     border: none;
-    background-color: #008CBA;
+    background-color: #007BFF;
     color: white;
-    border-radius: 4px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-.card-table button:hover {
-    background-color: #007B9A;
+.pagination button.active {
+    background-color: #0056b3;
 }
 
-
-/* Modal Styling */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.pagination button:hover:not(.active) {
+    background-color: #0056b3;
 }
 
 .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     max-width: 500px;
     width: 100%;
 }
 
-.close-button {
-    background: none;
-    border: none;
-    font-size: 20px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
 }
 
-.modal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.modal h2 {
+    margin-bottom: 20px;
 }
 
-.modal-form input,
-.modal-form select {
+.modal form label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.modal form input[type="text"],
+.modal form select {
     padding: 8px;
+    width: 100%;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-.modal-form button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
+.modal form input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-.modal-form button:hover {
-    background-color: #45a049;
+.modal-buttons button:first-child {
+    background-color: #007BFF;
+    color: white;
+}
+
+.modal-buttons button:first-child:hover {
+    background-color: #0056b3;
+}
+
+.modal-buttons button:last-child {
+    background-color: #f44336;
+    color: white;
+}
+
+.modal-buttons button:last-child:hover {
+    background-color: #d32f2f;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
 }

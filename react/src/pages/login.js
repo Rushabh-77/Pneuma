@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 function Login() {
@@ -56,6 +56,9 @@ function Login() {
                 </label>
                 <button type="submit" style={styles.button}>Login</button>
             </form>
+            <p style={styles.registerText}>
+                Don't have an account? <Link to="/register" style={styles.registerLink}>Register here</Link>
+            </p>
         </div>
     );
 }
@@ -97,6 +100,15 @@ const styles = {
     error: {
         color: 'red',
         marginBottom: '10px',
+    },
+    registerText: {
+        marginTop: '20px',
+        textAlign: 'center',
+    },
+    registerLink: {
+        color: '#007BFF',
+        textDecoration: 'none',
+        fontWeight: 'bold',
     },
 };
 

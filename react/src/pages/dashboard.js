@@ -5,8 +5,8 @@ import CreditCardPage from './creditCard';
 import './styles.css';  
 
 const Dashboard = () => {
-    const [selectedPage, setSelectedPage] = useState('bank');  // Default to 'bank'
-
+    const [selectedPage, setSelectedPage] = useState('bank');
+    
     const handlePageChange = (event) => {
         setSelectedPage(event.target.value);
     };
