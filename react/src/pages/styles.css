@@ -1,0 +1,133 @@
+/* styles.css */
+
+.credit-card-page {
+    padding: 20px;
+}
+
+.search-filter {
+    margin-bottom: 20px;
+}
+
+.card-form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-form input,
+.card-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.card-form button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card-form button:hover {
+    background-color: #45a049;
+}
+
+.card-table {
+    overflow-x: auto;
+}
+
+.card-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.card-table th,
+.card-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.card-table th {
+    background-color: #f2f2f2;
+}
+
+.card-table td {
+    white-space: nowrap;
+}
+
+.card-table button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #008CBA;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card-table button:hover {
+    background-color: #007B9A;
+}
+
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-form input,
+.modal-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-form button:hover {
+    background-color: #45a049;
+}

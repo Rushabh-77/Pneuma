@@ -1,6 +1,10 @@
 const config = require("./config/config.js");
 const express = require("express");
 const sequelize = require("./config/db");
+const bankRoutes = require('./routes/bankRoutes.js');
+const creditCardRoutes = require('./routes/creditCardRoutes.js');
+const userRoutes = require('./routes/userRoutes.js');
+const cors = require("cors")
 
 const app = express();
 
@@ -13,10 +17,19 @@ sequelize.sync({ alter: false })
         console.error("Error connecting to MySQL database:", error);
     });
 
-// import the models here
+
+app.use(cors())
+app.use(express.json());
+
+// models
 require('./models/bank');
 require('./models/creditCard');
+require('./models/user.js');
 
+//routes
+app.use('/api/user', userRoutes);
+app.use('/api/bank', bankRoutes);
+app.use('/api/creditCard', creditCardRoutes);
 
 const PORT = config.PORT || 5000;
 
